@@ -13,7 +13,8 @@ public class ProductController {
     private final ProductService productService;
 
     @GetMapping("/{skuCode}")
-    public boolean isInStock(@PathVariable String skuCode){
+    public boolean isInStock(@PathVariable String skuCode) throws InterruptedException{
+        Thread.sleep(5000);
         return productService.isInStock(skuCode);
     }
 
